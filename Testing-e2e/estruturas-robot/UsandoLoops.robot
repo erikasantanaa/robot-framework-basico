@@ -1,3 +1,5 @@
+# OBS: Para rodar loops no terminal, ex: robot -t "Teste de REPEAT KEYWORD" .\estruturas-robot\UsandoLoops.robot
+
 *** Settings ***
 Documentation   Vamos aprender a fazer LOOPS usando o Robot Framework!!
 
@@ -32,8 +34,9 @@ Usando Repeat keyword
     Repeat Keyword    8x    Log To Console    Minha repetição da keyword!!!
 
 Usando FOR IN RANGE
+    # OBS: O ultimo numero o robot nao conta: 5
     Log To Console  ${\n}
-    FOR  ${CONTADOR}   IN RANGE  0   5
+    FOR  ${CONTADOR}   IN RANGE  0   5   
         Log To Console    Minha posição agora é: ${CONTADOR}
         Log   Minha posição agora é: ${CONTADOR}
     END
@@ -58,3 +61,4 @@ Usando FOR IN com EXIT FOR LOOP IF
         Log To Console    Minha fruta é: ${INDICE} --> ${FRUTA}!
         Exit For Loop If    '${FRUTA}'=='banana'
     END
+

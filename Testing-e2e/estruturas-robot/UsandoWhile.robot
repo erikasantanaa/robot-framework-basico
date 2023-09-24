@@ -18,6 +18,7 @@ Caso de teste exemplo de WHILE
     Usando WHILE para loop
 
 *** Keywords ***
+# OBS: O while executa um bloco de ações, enquanto a condição for verdadeira
 Usando WHILE para loop
     Log To Console    ${\n}
     WHILE  ${STATUS} <= 5

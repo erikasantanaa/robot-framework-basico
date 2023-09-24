@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230924 00:50:16.201" rpa="false" schemaversion="4">
+<suite id="s1" name="Api Testing Usuarios" source="c:\Users\Erika Santana\Desktop\teste-robot\ApiTesting\tests\api_testing_usuarios.robot">
+<test id="s1-t1" name="Cenário 01: Cadastrar um novo usuário com sucesso na ServeRest" line="7">
+<kw name="Criar um usuário novo" library="api_testing_usuarios_resource">
+<kw name="Generate Random String" library="String">
+<var>${palavra_aleatoria}</var>
+<arg>length=4</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230924 00:50:16.354" level="INFO">${palavra_aleatoria} = NefE</msg>
+<status status="PASS" starttime="20230924 00:50:16.353" endtime="20230924 00:50:16.356"/>
+</kw>
+<kw name="Convert To Lower Case" library="String">
+<var>${palavra_aleatoria}</var>
+<arg>${palavra_aleatoria}</arg>
+<doc>Converts string to lower case.</doc>
+<msg timestamp="20230924 00:50:16.357" level="INFO">${palavra_aleatoria} = nefe</msg>
+<status status="PASS" starttime="20230924 00:50:16.357" endtime="20230924 00:50:16.358"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${EMAIL_TEST}</arg>
+<arg>${palavra_aleatoria}@emailteste.com</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230924 00:50:16.359" level="INFO">${EMAIL_TEST} = nefe@emailteste.com</msg>
+<status status="PASS" starttime="20230924 00:50:16.358" endtime="20230924 00:50:16.359"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${EMAIL_TEST}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230924 00:50:16.360" level="INFO">nefe@emailteste.com</msg>
+<status status="PASS" starttime="20230924 00:50:16.360" endtime="20230924 00:50:16.360"/>
+</kw>
+<status status="PASS" starttime="20230924 00:50:16.353" endtime="20230924 00:50:16.360"/>
+</kw>
+<kw name="Cadastrar o usuário criado na ServeRest" library="api_testing_usuarios_resource">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>nome=Fulano da Silva</arg>
+<arg>email=${EMAIL_TEST}</arg>
+<arg>password=123456</arg>
+<arg>administrador=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230924 00:50:16.362" level="INFO">${body} = {'nome': 'Fulano da Silva', 'email': 'nefe@emailteste.com', 'password': '123456', 'administrador': 'true'}</msg>
+<status status="PASS" starttime="20230924 00:50:16.361" endtime="20230924 00:50:16.362"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230924 00:50:16.363" level="INFO">{'nome': 'Fulano da Silva', 'email': 'nefe@emailteste.com', 'password': '123456', 'administrador': 'true'}</msg>
+<status status="PASS" starttime="20230924 00:50:16.362" endtime="20230924 00:50:16.363"/>
+</kw>
+<kw name="Criar Sessão base na ServeRest" library="api_testing_usuarios_resource">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230924 00:50:16.363" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230924 00:50:16.363" endtime="20230924 00:50:16.363"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>alias=ServeRest</arg>
+<arg>url=https://serverest.dev/</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230924 00:50:16.364" level="INFO">Creating Session using : alias=ServeRest, url=https://serverest.dev/, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230924 00:50:16.364" endtime="20230924 00:50:16.364"/>
+</kw>
+<status status="PASS" starttime="20230924 00:50:16.363" endtime="20230924 00:50:16.364"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${resposta}</var>
+<arg>alias=ServeRest</arg>
+<arg>url=/usuarios</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230924 00:50:16.886" level="INFO">POST Request : url=https://serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '106'} 
+ body=b'{"nome": "Fulano da Silva", "email": "nefe@emailteste.com", "password": "123456", "administrador": "true"}' 
+ </msg>
+<msg timestamp="20230924 00:50:16.887" level="INFO">POST Response : url=https://serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '8f7c6654c8cc1c8d49f73be39e2f1568;o=1', 'Date': 'Sun, 24 Sep 2023 03:50:15 GMT', 'Server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "nlg0QgwgwHS5fXRv"
+} 
+ </msg>
+<msg timestamp="20230924 00:50:16.887" level="INFO">C:\Users\Erika Santana\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230924 00:50:16.889" level="INFO">${resposta} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230924 00:50:16.364" endtime="20230924 00:50:16.889"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230924 00:50:16.890" level="INFO">{'message': 'Cadastro realizado com sucesso', '_id': 'nlg0QgwgwHS5fXRv'}</msg>
+<status status="PASS" starttime="20230924 00:50:16.889" endtime="20230924 00:50:16.890"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<arg>${resposta.json}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230924 00:50:16.891" level="INFO">${RESPOSTA} = &lt;bound method Response.json of &lt;Response [201]&gt;&gt;</msg>
+<status status="PASS" starttime="20230924 00:50:16.890" endtime="20230924 00:50:16.892"/>
+</kw>
+<status status="PASS" starttime="20230924 00:50:16.361" endtime="20230924 00:50:16.892"/>
+</kw>
+<kw name="Conferir se o usuário foi cadastrado corretamente" library="api_testing_usuarios_resource">
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230924 00:50:16.894" level="INFO">&lt;bound method Response.json of &lt;Response [201]&gt;&gt;</msg>
+<status status="PASS" starttime="20230924 00:50:16.894" endtime="20230924 00:50:16.894"/>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA}</arg>
+<arg>message</arg>
+<arg>Cadastro realizado com sucesso</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<msg timestamp="20230924 00:50:16.895" level="FAIL">TypeError: Expected argument 1 to be a dictionary or dictionary-like, got method instead.</msg>
+<status status="FAIL" starttime="20230924 00:50:16.895" endtime="20230924 00:50:16.897"/>
+</kw>
+<status status="FAIL" starttime="20230924 00:50:16.893" endtime="20230924 00:50:16.897"/>
+</kw>
+<status status="FAIL" starttime="20230924 00:50:16.351" endtime="20230924 00:50:16.898">TypeError: Expected argument 1 to be a dictionary or dictionary-like, got method instead.</status>
+</test>
+<status status="FAIL" starttime="20230924 00:50:16.207" endtime="20230924 00:50:16.900"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Api Testing Usuarios">Api Testing Usuarios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
