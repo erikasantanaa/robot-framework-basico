@@ -1,8 +1,20 @@
+# Os argumentos em Robot Framework são utilizados para passar informações dinâmicas para as variáveis
+# ou palavras-chave. Isso possibilita a reutilização de código e a execução de testes com 
+# diferentes conjuntos de dados. Existem alguns escopos principais para variáveis em Robot Framework:
+
+# **Variáveis Locais**: São definidas dentro de uma keyword e só existem dentro do escopo dessa keyword. 
+# Elas são acessíveis somente dentro daquela keyword específica.
+
+# **Variáveis Globais**: São definidas no nível do teste ou suite e podem ser acessadas por todas as keywords nesse nível.
+
+# **Argumentos**: São passados para keywords para permitir a reutilização da keyword com diferentes valores. 
+#  Eles são definidos entre as chaves **`{}`** na declaração da keyword.
+
 *** Settings ***
 Documentation   Exemplo de uso de variáveis como argumentos em Keywords
 
 *** Variable ***
-&{PESSOA}       nome=May Fernandes   email=mayfernandes@exemplo.com.br   idade=20   sexo=feminino
+${PESSOA}       nome=May Fernandes   email=mayfernandes@exemplo.com.br   idade=20   sexo=feminino
 
 *** Test Cases ***
 Caso de teste de exemplo 01

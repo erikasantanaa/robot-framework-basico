@@ -54,7 +54,7 @@ Quando acessar o menu "Eletrônicos"
     Entrar no menu "Eletrônicos"
     
 Então o título da página deve ficar "Eletrônicos e Tecnologia | Amazon.com.br"
-    Verificar se o título da página fica "Eletrônicos e Tecnologia | Amazon.com.br"
+    Verificar se o título da página fica "Eletrônicos e Tecnologia | Amazon.com.br"''
 
 E o texto "Eletrônicos e Tecnologia" deve ser exibido na página
     Verificar se aparece a frase "Eletrônicos e Tecnologia"

@@ -1,3 +1,15 @@
+# Variáveis Globais: São definidas no arquivo de resource ou diretamente no 
+# arquivo de configuração (usando a seção Variables). Elas podem ser acessadas
+# de qualquer lugar no projeto e são definidas usando Set Global Variable.
+
+# Variáveis Locais: São definidas dentro de uma keyword ou teste específico e
+# são acessíveis apenas dentro desse contexto. Elas são criadas usando 
+# o prefixo ${} ou o comando Set Variable.
+
+# Variáveis de Teste/Suite: São definidas no nível de teste ou suite e podem 
+# ser acessadas em todos os testes dentro dessa suite. Elas são definidas 
+# usando o comando Set Suite Variable ou Set Test Variable.
+
 *** Settings ***
 Documentation   Exemplo de escopo de variáveis: GLOBAIS, SUITE, TESTE (test case) e LOCAL (keyword)
 Library         String

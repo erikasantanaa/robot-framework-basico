@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   Suíte de exmeplo didático para exemplificar o uso de IF nos testes
+Documentation   Suíte de exemplo didático para exemplificar o uso de IF nos testes
 Test Setup      Log To Console    ${\n}
 Test Teardown   Log To Console    ${\n}
 

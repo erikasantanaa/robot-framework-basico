@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20231118 20:11:45.631" rpa="false" schemaversion="4">
+<suite id="s1" name="UsandoWhile" source="C:\Users\Erika Santana\Desktop\teste-robot\Testing-e2e\estruturas-robot\UsandoWhile.robot">
+<test id="s1-t1" name="Caso de teste exemplo de WHILE" line="17">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>${\n}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231118 20:11:45.664" endtime="20231118 20:11:45.666"/>
+</kw>
+<kw name="Usando WHILE para loop">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231118 20:11:45.667" endtime="20231118 20:11:45.667"/>
+</kw>
+<while condition="${STATUS} &lt;= 5">
+<iter>
+<kw name="Log" library="BuiltIn">
+<arg>Executando esse bloco enquanto o valor da variável STATUS [${STATUS}] for menor ou igual a 5!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231118 20:11:45.668" level="INFO">Executando esse bloco enquanto o valor da variável STATUS [1] for menor ou igual a 5!</msg>
+<status status="PASS" starttime="20231118 20:11:45.668" endtime="20231118 20:11:45.668"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Executando esse bloco enquanto o valor da variável STATUS [${STATUS}] for menor ou igual a 5!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231118 20:11:45.668" endtime="20231118 20:11:45.669"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${STATUS}</var>
+<arg>${STATUS+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231118 20:11:45.670" level="INFO">${STATUS} = 2</msg>
+<status status="PASS" starttime="20231118 20:11:45.669" endtime="20231118 20:11:45.670"/>
+</kw>
+<status status="PASS" starttime="20231118 20:11:45.668" endtime="20231118 20:11:45.670"/>
+</iter>
+<iter>
+<kw name="Log" library="BuiltIn">
+<arg>Executando esse bloco enquanto o valor da variável STATUS [${STATUS}] for menor ou igual a 5!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231118 20:11:45.671" level="INFO">Executando esse bloco enquanto o valor da variável STATUS [2] for menor ou igual a 5!</msg>
+<status status="PASS" starttime="20231118 20:11:45.671" endtime="20231118 20:11:45.671"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Executando esse bloco enquanto o valor da variável STATUS [${STATUS}] for menor ou igual a 5!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231118 20:11:45.671" endtime="20231118 20:11:45.673"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${STATUS}</var>
+<arg>${STATUS+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231118 20:11:45.674" level="INFO">${STATUS} = 3</msg>
+<status status="PASS" starttime="20231118 20:11:45.673" endtime="20231118 20:11:45.674"/>
+</kw>
+<status status="PASS" starttime="20231118 20:11:45.671" endtime="20231118 20:11:45.674"/>
+</iter>
+<iter>
+<kw name="Log" library="BuiltIn">
+<arg>Executando esse bloco enquanto o valor da variável STATUS [${STATUS}] for menor ou igual a 5!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231118 20:11:45.674" level="INFO">Executando esse bloco enquanto o valor da variável STATUS [3] for menor ou igual a 5!</msg>
+<status status="PASS" starttime="20231118 20:11:45.674" endtime="20231118 20:11:45.674"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Executando esse bloco enquanto o valor da variável STATUS [${STATUS}] for menor ou igual a 5!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231118 20:11:45.674" endtime="20231118 20:11:45.675"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${STATUS}</var>
+<arg>${STATUS+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231118 20:11:45.676" level="INFO">${STATUS} = 4</msg>
+<status status="PASS" starttime="20231118 20:11:45.675" endtime="20231118 20:11:45.676"/>
+</kw>
+<status status="PASS" starttime="20231118 20:11:45.674" endtime="20231118 20:11:45.676"/>
+</iter>
+<iter>
+<kw name="Log" library="BuiltIn">
+<arg>Executando esse bloco enquanto o valor da variável STATUS [${STATUS}] for menor ou igual a 5!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231118 20:11:45.676" level="INFO">Executando esse bloco enquanto o valor da variável STATUS [4] for menor ou igual a 5!</msg>
+<status status="PASS" starttime="20231118 20:11:45.676" endtime="20231118 20:11:45.676"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Executando esse bloco enquanto o valor da variável STATUS [${STATUS}] for menor ou igual a 5!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231118 20:11:45.677" endtime="20231118 20:11:45.677"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${STATUS}</var>
+<arg>${STATUS+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231118 20:11:45.678" level="INFO">${STATUS} = 5</msg>
+<status status="PASS" starttime="20231118 20:11:45.678" endtime="20231118 20:11:45.678"/>
+</kw>
+<status status="PASS" starttime="20231118 20:11:45.676" endtime="20231118 20:11:45.678"/>
+</iter>
+<iter>
+<kw name="Log" library="BuiltIn">
+<arg>Executando esse bloco enquanto o valor da variável STATUS [${STATUS}] for menor ou igual a 5!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231118 20:11:45.679" level="INFO">Executando esse bloco enquanto o valor da variável STATUS [5] for menor ou igual a 5!</msg>
+<status status="PASS" starttime="20231118 20:11:45.679" endtime="20231118 20:11:45.679"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Executando esse bloco enquanto o valor da variável STATUS [${STATUS}] for menor ou igual a 5!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231118 20:11:45.679" endtime="20231118 20:11:45.681"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${STATUS}</var>
+<arg>${STATUS+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231118 20:11:45.681" level="INFO">${STATUS} = 6</msg>
+<status status="PASS" starttime="20231118 20:11:45.681" endtime="20231118 20:11:45.681"/>
+</kw>
+<status status="PASS" starttime="20231118 20:11:45.679" endtime="20231118 20:11:45.681"/>
+</iter>
+<status status="PASS" starttime="20231118 20:11:45.667" endtime="20231118 20:11:45.682"/>
+</while>
+<status status="PASS" starttime="20231118 20:11:45.666" endtime="20231118 20:11:45.682"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>${\n}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231118 20:11:45.682" endtime="20231118 20:11:45.683"/>
+</kw>
+<status status="PASS" starttime="20231118 20:11:45.664" endtime="20231118 20:11:45.684"/>
+</test>
+<doc>Suíte para exemplificar o uso de LOOPS nos testes
+Os LOOPS devem ser pouco utilizados, mas tem hora que não tem jeito
+e precisamos dele mesmo, então vamos ver como é!
+LOOPS: use com moderação!
+Infelizmente o Loop FOR ainda não tem uma estrutura keyword-driven
+Mas o criador do Robot já disse que estão estudando uma solução!</doc>
+<status status="PASS" starttime="20231118 20:11:45.632" endtime="20231118 20:11:45.687"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="UsandoWhile">UsandoWhile</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
